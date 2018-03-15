@@ -1,3 +1,56 @@
+# PROLOG-List-Operations-1 – Documentation
+
+Csc 600-01
+
+Keawa Rozet
+
+Code available at: [https://github.com/krozet/PROLOG-List-Operations-1](https://github.com/krozet/PROLOG-List-Operations-1)
+
+# Prompt
+
+Write a PROLOG program that investigates family relationships using lists. The facts should be organized as follows:
+
+m([first\_male\_name, second\_male\_name, …, last\_male\_name]).
+
+m([first\_female\_name, second\_female\_name, …, last\_female\_name]).
+
+family([father, mother, [child\_1, child\_2, …, child\_n]]).
+
+Write rules that define the following relations:
+
+male(X)
+
+female(X)
+
+father, mother, parent
+
+siblings
+
+brother, brothers
+
+sister, sisters
+
+cousins
+
+uncle, aunt
+
+grandchild, grandson, granddaughter
+
+greatgrandparent
+
+ancestor
+
+For each of these rules show an example of its use.
+
+# What my code does
+
+In my code I have included 4 generations worth of family to test. In conjunction with the nature of PROLOG, my code can tests rules either by comparing two values or by displaying all the values that satisfy the rule with a value provided by the user. I tried to show case this in my code example.
+
+For the examples I use the same names a lot for the sake of readability while grading, but a number of different value combinations will work for each rule.
+
+# Code
+
+```PROLOG
 m([keawa, kalani, haku, alii, kaeo, eric, shawn, wayne, steve,
    brad, caleb, kai, mark, roger, mako, keina, ben, mathew, joel,
    kainalu, tim, sam, richard, kamehameha]).
@@ -117,3 +170,119 @@ write_sublist([]).
 write_sublist([H|T]) :-
     write(H), nl,
     write_sublist(T).
+```
+
+
+Example
+
+&gt; swipl
+
+Welcome to SWI-Prolog (threaded, 64 bits, version 7.6.4)
+
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+
+Please run ?- license. for legal details.
+
+For online help and background, visit http://www.swi-prolog.org
+
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- [listops].
+
+true.
+
+?- male(keawa).
+
+true .
+
+?- female(X).
+
+X = elizabeth ;
+
+X = raeshell ;
+
+X = sarah .
+
+?- father(eric, keawa).
+
+true .
+
+?- mother(zeli, eric).
+
+true .
+
+?- parent(X, keawa).
+
+X = eric ;
+
+X = raeshell ;
+
+false.
+
+?- siblings(brad, X).
+
+X = haley ;
+
+X = caleb ;
+
+false.
+
+?- brother(mako, keina).
+
+true .
+
+?- sister(haley, brad).
+
+true .
+
+?- sisters(raeshell, sarah).
+
+true .
+
+?- cousins(keawa, X).
+
+X = alii ;
+
+X = kaeo ;
+
+X = jordan ;
+
+X = haley ;
+
+X = brad ;
+
+X = caleb ;
+
+false.
+
+?- uncle(steve, keawa).
+
+true .
+
+?- aunt(X, keawa).
+
+X = mia ;
+
+X = sarah ;
+
+false.
+
+?- grandchild(keawa, wayne).
+
+true .
+
+?- grandson(steve, mark).
+
+true .
+
+?- granddaughter(haley, wayne).
+
+true .
+
+?- greatgrandparent(kainalu, keawa).
+
+true .
+
+?- ancestor(kamehameha, keawa).
+
+true .
