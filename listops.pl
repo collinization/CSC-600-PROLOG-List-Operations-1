@@ -6,20 +6,20 @@ f([elizabeth, raeshell, sarah, geri, jordan, zeli, hannah, mia,
    chloe, paina]).
 %fourth generation
 family([eric, raeshell, [keawa, kalani, elizabeth]]).
-family([sarah, shawn, [alii, kaeo, jordan]]).
+family([shawn, sarah, [alii, kaeo, jordan]]).
 family([steve, hannah, [haley, brad, caleb]]).
 %third generation
-family([geri, wayne, [raeshell, sarah, steve]]).
-family([zeli, kai, [eric, mia]]).
+family([wayne, geri, [raeshell, sarah, steve]]).
+family([kai, zeli, [eric, mia]]).
 %second generation
-family([lucy, mark, [wayne, cici]]).
+family([mark, lucy, [wayne, cici]]).
 family([ben, sheryl, [geri, mathew, joel]]).
 family([roger, kani, [zeli, buni, mako, keina]]).
 family([kainalu, opau, [kai]]).
 %first generation
 family([tim, marybeth, [lucy]]).
 family([sam, heather, [ben]]).
-family([chloe, richard, [roger]]).
+family([richard, chloe, [roger]]).
 family([kamehameha, paina, [kainalu]]).
 
 
