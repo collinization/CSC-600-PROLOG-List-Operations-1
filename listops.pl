@@ -90,6 +90,24 @@ aunt(X, Y) :-
   parent(F, Y),
   sister(X, F).
 
+grandchild(X, Y) :-
+  parent(M, X),
+  parent(Y, M).
+grandson(X, Y) :-
+  grandchild(X, Y),
+  male(X).
+granddaughter(X, Y) :-
+  grandchild(X, Y),
+  female(X).
+
+greatgrandparent(X, Y) :-
+  grandchild(Y, M),
+  parent(X, M).
+
+ancestor(X, Y) :-
+  greatgrandparent(M, Y),
+  parent(X, M).
+
 show_families :- family(F), write_list(F).
 write_list([X,Y | [Sub]]) :-
   write(X), nl, write(Y), nl,
